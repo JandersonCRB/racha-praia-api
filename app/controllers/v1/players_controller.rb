@@ -2,15 +2,16 @@ class V1::PlayersController < ApplicationController
 	def index
 		@players = Player.all
 
-		render json? @players, status: ok
+		render json: @players, status: :ok
 	end
 
 	def create
 		@player = Player.new(player_params)
 
-		@player.save
-
-		render json: @player, status: :created
+		if @player.save
+			render json: @player, status: :created
+		else
+		end
 	end
 
 	def destroy
@@ -25,6 +26,6 @@ class V1::PlayersController < ApplicationController
 	private
 
 	def player_params
-		params.require(:player).permit(:fullname, :email)
+		params.require(:player).permit(:fullname, :nickname)
 	end
 end

@@ -2,16 +2,14 @@ class V1::PlayersController < ApplicationController
 	def index
 		@players = Player.all
 
-		render json: @players, status: :ok
+		render :index, status: :ok
 	end
 
 	def create
 		@player = Player.new(player_params)
 
-		if @player.save
-			render json: @player, status: :created
-		else
-		end
+		@player.save
+		render :create, status: :created
 	end
 
 	def destroy

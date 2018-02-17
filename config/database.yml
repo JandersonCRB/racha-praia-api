@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: racha-praia-api_production
+  database: racha-praia
   username: racha-praia-api
   password: <%= ENV['RACHA-PRAIA-API_DATABASE_PASSWORD'] %>

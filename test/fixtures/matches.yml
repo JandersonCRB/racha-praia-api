@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-02-16
+  team_one: one
+  team_two: one
+
+two:
+  date: 2018-02-16
+  team_one: two
+  team_two: two

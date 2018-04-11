@@ -1,3 +1,5 @@
 class Player < ApplicationRecord
-	validates :nickname, presence: true
+	has_and_belongs_to_many :teams
+
+	validates :name, presence: true
 end

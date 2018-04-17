@@ -4,15 +4,13 @@ class V1::MatchesController < ApplicationController
 	end
 
 	def create
-		byebug
 		@match = Match.new(matches_params)
-		# byebug
-		# matches_params.teams_attributes.each do |team_hash|
-		# 	match.teams.build(team)
-		# end
 
-		@match.save
-		render :create, status: :created
+		if @match.save
+			render :create, status: :created
+		else
+			render json: @match.errors.full_messages, status: :unprocessable_entity
+		end
 	end
 
 	private

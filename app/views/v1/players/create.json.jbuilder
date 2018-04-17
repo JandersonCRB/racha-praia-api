@@ -1,1 +1,1 @@
-json.partial! 'v1/players/players', player: player
+json.partial! 'v1/players/players', player: @player

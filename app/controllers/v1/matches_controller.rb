@@ -1,6 +1,7 @@
 class V1::MatchesController < ApplicationController
 	before_action :change_params_name
 	def index
+		@matches = Match.all
 	end
 
 	def create
@@ -13,6 +14,10 @@ class V1::MatchesController < ApplicationController
 		end
 	end
 
+	def show
+		@match = Match.find(params[:id])
+		render :show, status: :ok
+	end
 	private
 
 	def matches_params

@@ -1,3 +1,1 @@
-json.data do
-	json.array! @matches
-end
+json.array! @matches

@@ -8,8 +8,11 @@ class V1::PlayersController < ApplicationController
 	def create
 		@player = Player.new(player_params)
 
-		@player.save
-		render :create, status: :created
+		if @player.save
+			render :create, status: :created
+		else
+			render json: @player.errors.full_messages, status: :unprocessable_entity
+		end
 	end
 
 	def destroy
